@@ -10,7 +10,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    (u'Mário Chaves', 'macndesign@gmail.com'),
+    (u'MÃ¡rio Chaves', 'macndesign@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -81,7 +81,6 @@ STATICFILES_FINDERS = (
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = os.environ.get('SECRET_KEY', 'pistalo_key')
-# 'y6cg+8d69_jw7#loc1uf%6cde(rz!l4rqr+4$#c^d-j3xkf=q*'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
