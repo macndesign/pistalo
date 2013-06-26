@@ -1,0 +1,10 @@
+venv
+dev.db
+*.pyc
+*.sw[a-z]
+*.pyc
+*.DS_Store
+.idea
+local_settings.py
+.env
+media/

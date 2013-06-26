@@ -1,0 +1,1 @@
+web: gunicorn pistalo.wsgi
