@@ -24,34 +24,30 @@
 </head>
 
 <body>
-<header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="span3">
-                <a href="{% url 'core:home' %}"><img src="{{ STATIC_URL }}img/marca_refritek.png"></a>
-            </div>
-            <div class="span9">
-                <ul class="nav nav-pills pull-right">
-                    {% block menu %}
-                        <li><a href="{% url 'core:home' %}">Início</a></li>
-                    {% endblock %}
-                </ul>
+
+<div class="container spacing">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container" style="width: auto;">
+                <a class="brand" href="#">Pistalo</a>
             </div>
         </div>
+        <!-- /navbar-inner -->
     </div>
-</header>
+</div>
 
 {% block content %}{% endblock %}
 
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="span12">
-                <span class="muted">&copy; 2013 Pistalo</span>
+<div class="container spacing">
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container" style="width: auto;">
+                <span class="brand" href="#">&copy; 2013 Pistalo</span>
             </div>
         </div>
+        <!-- /navbar-inner -->
     </div>
-</footer>
+</div>
 
 <!-- Le javascript
 ================================================== -->

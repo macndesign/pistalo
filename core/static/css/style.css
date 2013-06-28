@@ -1,5 +1,6 @@
 body {
     font-family: "Ubuntu", sans-serif !important;
+    background: #efefef url("../img/bg01.jpg");
 }
 
 .destaque-text p {
@@ -9,63 +10,8 @@ body {
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
 }
 
-header.header {
-    background: #39d680; /* Old browsers */
-    background: -moz-linear-gradient(top, #39d680 0%, #299a0b 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #39d680), color-stop(100%, #299a0b)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #39d680 0%, #299a0b 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #39d680 0%, #299a0b 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #39d680 0%, #299a0b 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #39d680 0%, #299a0b 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#39d680', endColorstr='#299a0b', GradientType=0); /* IE6-9 */
-    padding: 2em 0;
-}
-
-div.slider {
-    background: #f5f6f6; /* Old browsers */
-    background: -moz-linear-gradient(top, #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f6f6), color-stop(21%, #dbdce2), color-stop(49%, #b8bac6), color-stop(80%, #dddfe3), color-stop(100%, #f5f6f6)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f6f6', endColorstr='#f5f6f6', GradientType=0); /* IE6-9 */
-    padding: 2em 0;
-}
-
-div.main {
-    padding: 2em 0;
-}
-
-footer.footer {
-    background: #f5f6f6; /* Old browsers */
+div.spacing {
     padding: 1em 0;
-}
-
-header.header ul {
-    margin: 1.5em 0;
-}
-
-.nav-pills > li > a:hover,
-.nav-pills > li > a:focus {
-    color: #fff;
-    background-color: #01c667;
-}
-
-.nav-pills > .active > a,
-.nav-pills > .active > a:hover,
-.nav-pills > .active > a:focus {
-    color: #bee2ce;
-    background-color: #01b153;
-}
-
-.nav-pills > li > a {
-    color: #fff;
-}
-
-header.header .nav-pills > li.active > a {
-    color: #dbf3e6;
-    text-decoration: none;
 }
 
 /* fancybox */
