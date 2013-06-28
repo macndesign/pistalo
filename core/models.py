@@ -1,5 +1,6 @@
 # coding: utf-8
 from django.db import models
+from django.contrib import admin
 
 
 class GaleriaQuerySet(models.query.QuerySet):
@@ -41,3 +42,6 @@ class Galeria(models.Model):
 
     def __unicode__(self):
         return self.nome
+
+
+admin.site.register(Galeria)
