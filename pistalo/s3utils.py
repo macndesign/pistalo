@@ -10,4 +10,4 @@ class S3StaticStorage(S3BotoStorage):
 
 
 StaticRootS3BotoStorage = lambda: S3StaticStorage(location='static')
-MediaRootS3BotoStorage = lambda: S3BotoStorage()
+MediaRootS3BotoStorage = lambda: S3BotoStorage(location='media')
