@@ -1,17 +1,14 @@
 body {
-    font-family: "Ubuntu", sans-serif !important;
+    font-family: 'Vollkorn', serif;
     background: #efefef url("../img/bg01.jpg");
 }
 
-.destaque-text p {
-    font-size: 2em;
-    line-height: 1.2em;
-    color: #504f4f;
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
+header {
+    padding: 2em 0 0;
 }
 
-div.spacing {
-    padding: 1em 0;
+footer {
+    padding: 2em 0;
 }
 
 /* fancybox */

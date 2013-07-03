@@ -3,9 +3,9 @@
 
 {% block extra_head %}
     <!-- fancybox -->
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/jquery.fancybox.css?v=2.1.4" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/jquery.fancybox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-buttons.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-thumbs.css" />
 {% endblock %}
 
 {% block title %}Galeria{% endblock %}
@@ -23,12 +23,16 @@
 
                 <ul class="thumbnails">
                     {% for quadro in quadros %}
-                        <li class="span2">
-                            <a href="{{ quadro.imagem.url }}" class="thumbnail" title="{{ quadro.nome }}{% if quadro.desc %}: {{ quadro.desc }}{% endif %}">
+                        <li class="span2" style="height: 160px">
+                            <a href="{{ quadro.imagem.url }}" class="thumbnail" title="{{ quadro.nome }}">
                             {% thumbnail quadro.thumb "160x160" crop="center" as im %}
                                 <img width="{{ im.width }}" height="{{ im.height }}" src="{{ im.url }}" alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
                             {% endthumbnail %}
                             </a>
+                        </li>
+                        <li class="span4" style="height: 160px; overflow-y: auto">
+                            <h4>{{ quadro.nome }}</h4>
+                            {% if quadro.desc %}<p>{{ quadro.desc }}</p>{% endif %}
                         </li>
                     {% empty %}
                         <li>Não há quadros cadastrados</li>
