@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load thumbnail %}
 
 {% block extra_head %}
     <!-- fancybox -->
@@ -24,7 +25,9 @@
                     {% for quadro in quadros %}
                         <li class="span2">
                             <a href="{{ quadro.imagem.url }}" class="thumbnail" title="{{ quadro.nome }}{% if quadro.desc %}: {{ quadro.desc }}{% endif %}">
-                                <img width="160" height="160" src="{{ quadro.thumb.url }}" alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
+                            {% thumbnail quadro.thumb "160x160" crop="center" as im %}
+                                <img width="{{ im.width }}" height="{{ im.height }}" src="{{ im.url }}" alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
+                            {% endthumbnail %}
                             </a>
                         </li>
                     {% empty %}

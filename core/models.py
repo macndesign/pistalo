@@ -37,17 +37,6 @@ class Galeria(models.Model):
 
     objects = GaleriaManager()
 
-    def save(self, *args, **kwargs):
-        # Save this one
-        super(Galeria, self).save(*args,**kwargs)
-
-        # resize on file system
-        size = 160, 160
-        filename = str(self.thumb.path)
-        image = Image.open(filename)
-        image.thumbnail(size, Image.ANTIALIAS)
-        image.save(filename)
-
     class Meta:
         ordering = ['ordenacao', 'nome']
 
