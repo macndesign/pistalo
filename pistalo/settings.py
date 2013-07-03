@@ -56,7 +56,7 @@ AWS_QUERYSTRING_AUTH = False
 
 # Media
 MEDIA_ROOT = PROJECT_DIR.child('media')
-MEDIA_URL = 'https://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = 'https://%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 DEFAULT_FILE_STORAGE = 'pistalo.s3utils.MediaRootS3BotoStorage'
 
 # Static

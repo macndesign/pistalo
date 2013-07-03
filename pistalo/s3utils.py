@@ -1,6 +1,6 @@
 from storages.backends.s3boto import S3BotoStorage
 
-
+"""
 class S3StaticStorage(S3BotoStorage):
     def url(self, name):
         url = super(S3StaticStorage, self).url(name)
@@ -10,4 +10,7 @@ class S3StaticStorage(S3BotoStorage):
 
 
 StaticRootS3BotoStorage = lambda: S3StaticStorage(location='static')
+"""
+
+StaticRootS3BotoStorage = lambda: S3BotoStorage(location='static')
 MediaRootS3BotoStorage = lambda: S3BotoStorage(location='media')
