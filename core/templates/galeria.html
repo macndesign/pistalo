@@ -1,5 +1,4 @@
-{% extends "core/base.html" %}
-{% load thumbnail %}
+{% extends "base.html" %}
 
 {% block extra_head %}
     <!-- fancybox -->
@@ -23,16 +22,15 @@
 
                 <ul class="thumbnails">
                     {% for quadro in quadros %}
-                        <li class="span2" style="height: 160px">
+                        <li class="span2 quadro-imagem">
                             <a href="{{ quadro.imagem.url }}" class="thumbnail" title="{{ quadro.nome }}">
-                            {% thumbnail quadro.thumb "160x160" crop="center" as im %}
-                                <img width="{{ im.width }}" height="{{ im.height }}" src="{{ im.url }}" alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
-                            {% endthumbnail %}
+                                <img width="160" src="{{ quadro.thumb.url }}"
+                                     alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
                             </a>
                         </li>
-                        <li class="span4" style="height: 160px; overflow-y: auto">
+                        <li class="span4 quadro-texto">
                             <h4>{{ quadro.nome }}</h4>
-                            {% if quadro.desc %}<p>{{ quadro.desc }}</p>{% endif %}
+                            {% if quadro.desc %}{{ quadro.desc|linebreaks }}{% endif %}
                         </li>
                     {% empty %}
                         <li>Não há quadros cadastrados</li>

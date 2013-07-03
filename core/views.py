@@ -3,6 +3,6 @@ from .models import Galeria
 
 
 class GaleriaListView(ListView):
-    model = Galeria
+    queryset = Galeria.objects.ativos()
     context_object_name = 'quadros'
-    template_name = 'core/galeria.html'
+    template_name = 'galeria.html'

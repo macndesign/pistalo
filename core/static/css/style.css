@@ -11,6 +11,15 @@ footer {
     padding: 2em 0;
 }
 
+li.quadro-imagem {
+    height: 160px;
+}
+
+li.quadro-texto {
+    height: 160px;
+    overflow-y: auto;
+}
+
 /* fancybox */
 .fancybox-custom .fancybox-skin {
     box-shadow: 0 0 50px #222;
