@@ -24,7 +24,7 @@
                     {% for quadro in quadros %}
                         <li class="span2">
                             <a href="{{ quadro.imagem.url }}" class="thumbnail" title="{{ quadro.nome }}{% if quadro.desc %}: {{ quadro.desc }}{% endif %}">
-                                <img src="{{ quadro.thumb.url }}" alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
+                                <img width="160" height="160" src="{{ quadro.thumb.url }}" alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
                             </a>
                         </li>
                     {% empty %}
