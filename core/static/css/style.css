@@ -1,26 +1,71 @@
-body {
+html, body {
     font-family: 'Vollkorn', serif;
-    background: #efefef url("../img/bg01.jpg");
+    background: #efefef url("../img/bg01.jpg") bottom right;
+    height: 100%;
 }
 
 header {
-    padding: 2em 0 0;
+    padding: 3em 0 0;
+    background-color: #c92a46;
+    opacity: .7;
+
+}
+
+header img {
+    text-align: center;
+}
+
+.main {
+    padding-bottom: 2em;
 }
 
 footer {
-    padding: 2em 0;
+    padding: 2.5em 0;
 }
 
 li.quadro-imagem {
     height: 160px;
 }
 
+li.quadro-imagem img {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
 li.quadro-texto {
     height: 160px;
     overflow-y: auto;
+    background: rgba(255, 255, 255, .8);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+li.quadro-texto h4, li.quadro-texto p {
+    padding-left: 1em;
+}
+
+.page-header {
+    border-bottom: 1px dashed #db305a;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    color: #db305a;
 }
 
 /* fancybox */
 .fancybox-custom .fancybox-skin {
     box-shadow: 0 0 50px #222;
+}
+
+/**/
+
+@media (max-width: 767px) {
+    header, footer, .main {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 }

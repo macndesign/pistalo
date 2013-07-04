@@ -10,8 +10,6 @@
 {% block title %}Galeria{% endblock %}
 
 {% block content %}
-
-<div class="main">
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -23,7 +21,7 @@
                 <ul class="thumbnails">
                     {% for quadro in quadros %}
                         <li class="span2 quadro-imagem">
-                            <a href="{{ quadro.imagem.url }}" class="thumbnail" title="{{ quadro.nome }}">
+                            <a href="{{ quadro.imagem.url }}" class="thumb" title="{{ quadro.nome }}">
                                 <img width="160" src="{{ quadro.thumb.url }}"
                                      alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
                             </a>
@@ -40,8 +38,6 @@
             </div>
         </div>
     </div>
-</div>
-
 {% endblock %}
 
 {% block scripts %}
@@ -58,7 +54,7 @@
 
 <script>
     // Set custom style, close if clicked, change title type and overlay color
-    $(".thumbnail").fancybox({
+    $(".thumb").fancybox({
         wrapCSS    : 'fancybox-custom',
         closeClick : true,
 
