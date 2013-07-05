@@ -39,6 +39,10 @@ footer {
     padding: 2.5em 0;
 }
 
+footer a, footer a:hover {
+    color: #000;
+}
+
 li.quadro-imagem {
     height: 160px;
 }
