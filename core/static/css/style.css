@@ -10,6 +10,10 @@ header {
     opacity: .7;
 }
 
+a, a:hover {
+    color: #c92a46;
+}
+
 header img {
     text-align: center;
 }

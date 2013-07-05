@@ -25,7 +25,7 @@
                             </a>
                         </li>
                         <li class="span10 quadro-texto">
-                            <h4>{{ autor.nome }}</h4>
+                            <h4><a href="{% url 'core:autor' autor.pk %}">{{ autor.nome }}</a></h4>
                             {% if autor.desc %}{{ autor.desc|linebreaks }}{% endif %}
                         </li>
                     {% empty %}
@@ -39,6 +39,7 @@
 {% endblock %}
 
 {% block scripts %}
+    <script src="{{ STATIC_URL }}fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <!-- Perfect Scroll Bar -->
     <script type="text/javascript" src="{{ STATIC_URL }}js/perfect-scrollbar-0.4.1.min.js"></script>
 <script>
