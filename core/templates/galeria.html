@@ -29,7 +29,7 @@
                             </a>
                         </li>
                         <li class="span4 quadro-texto">
-                            <h4>{{ quadro.nome }}</h4>
+                            <h4>{{ quadro.nome }} <small>por <a href="{{ quadro.autor.get_absolute_url }}">{{ quadro.autor.nome }}</a></small></h4>
                             {% if quadro.desc %}{{ quadro.desc|linebreaks }}{% endif %}
                         </li>
                     {% empty %}

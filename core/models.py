@@ -2,6 +2,7 @@
 from django.db import models
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
+from django.core.urlresolvers import reverse
 
 
 class AutorQuerySet(models.query.QuerySet):
@@ -40,6 +41,10 @@ class Autor(models.Model):
 
     class Meta:
         ordering = ['ordenacao', 'nome']
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'core:autor', (), {'pk': self.pk}
 
     def __unicode__(self):
         return self.nome

@@ -11,7 +11,7 @@ class AutorListView(ListView):
 
 
 class AutorDetailView(DetailView):
-    queryset = Autor.objects.ativos()
+    model = Autor
     context_object_name = 'autor'
     template_name = 'autor.html'
 

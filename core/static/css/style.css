@@ -79,10 +79,6 @@ li.quadro-texto h4, li.quadro-texto p {
     border-bottom: 1px dashed #db305a;
 }
 
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    color: #db305a;
-}
-
 /* fancybox */
 .fancybox-custom .fancybox-skin {
     box-shadow: 0 0 50px #222;
