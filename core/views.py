@@ -29,5 +29,13 @@ class SugestaoListView(ListView):
     template_name = 'sugestoes.html'
 
 
+class VenderTemplateView(TemplateView):
+    template_name = 'vender.html'
+
+
+class ComprarTemplateView(TemplateView):
+    template_name = 'comprar.html'
+
+
 class ContatoTemplateView(TemplateView):
     template_name = 'contato.html'
