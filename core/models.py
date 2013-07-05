@@ -1,6 +1,7 @@
 # coding: utf-8
 from django.db import models
-from PIL import Image
+from imagekit.models import ImageSpecField
+from pilkit.processors import ResizeToFill
 
 
 class GaleriaQuerySet(models.query.QuerySet):
@@ -20,8 +21,8 @@ class Galeria(models.Model):
     ordenacao = models.PositiveSmallIntegerField(u'Ordenação', default=0)
     nome = models.CharField(max_length=120)
     desc = models.TextField(u'Descrição', blank=True)
-    thumb = models.ImageField(upload_to='galeria')
     imagem = models.ImageField(upload_to='galeria')
+    thumb = ImageSpecField(source='imagem', processors=[ResizeToFill(160, 160)], format='JPEG', options={'quality': 60})
     ativo = models.BooleanField(default=False)
 
     data_criacao = models.DateTimeField(
