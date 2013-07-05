@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+    <!-- Perfect Scroll Bar -->
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/perfect-scrollbar-0.4.1.min.css" />
+{% endblock %}
+
+{% block title %}Galeria{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+
+                <div class="page-header">
+                    <h1>Autores</h1>
+                </div>
+
+                <ul class="thumbnails">
+                    {% for autor in autores %}
+                        <li class="span2 quadro-imagem">
+                            <a href="{% url 'core:autor' autor.pk %}">
+                                <img width="160" height="160" src="{{ autor.thumb.url }}"
+                                     alt="{{ autor.nome }}" title="{{ autor.nome }}">
+                            </a>
+                        </li>
+                        <li class="span10 quadro-texto">
+                            <h4>{{ autor.nome }}</h4>
+                            {% if autor.desc %}{{ autor.desc|linebreaks }}{% endif %}
+                        </li>
+                    {% empty %}
+                        <li>Não há autores cadastrados</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <!-- Perfect Scroll Bar -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/perfect-scrollbar-0.4.1.min.js"></script>
+<script>
+    $('.quadro-texto').perfectScrollbar({
+        wheelSpeed: 20,
+        wheelPropagation: false
+    });
+</script>
+{% endblock %}

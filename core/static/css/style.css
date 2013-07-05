@@ -8,11 +8,27 @@ header {
     padding: 3em 0 0;
     background-color: #c92a46;
     opacity: .7;
-
 }
 
 header img {
     text-align: center;
+}
+
+header .container {
+    position: relative;
+}
+
+.top-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #000;
+}
+
+.top-menu a {
+    color: #fff;
+    font-size: 1.1em;
+    font-style: italic;
 }
 
 .main {
@@ -27,10 +43,14 @@ li.quadro-imagem {
     height: 160px;
 }
 
-li.quadro-imagem img {
+.quadro-imagem img {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+}
+
+.quadro-imagem .desc-autor {
+    margin-top: 1em;
 }
 
 li.quadro-texto {

@@ -1,6 +1,9 @@
+# coding: utf-8
 from django.conf.urls import patterns, url
-from .views import GaleriaListView
+from .views import GaleriaListView, AutorListView, AutorDetailView
 
 urlpatterns = patterns('',
     url(r'^$', GaleriaListView.as_view(), name='home'),
+    url(r'^autores/$', AutorListView.as_view(), name='autores'),
+    url(r'^autor/(?P<pk>\d+)/$', AutorDetailView.as_view(), name='autor'),
 )

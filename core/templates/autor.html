@@ -13,22 +13,26 @@
 
 {% block content %}
     <div class="container">
+        <div class="page-header">
+            <h1><i>{{ autor.nome }}</i></h1>
+        </div>
         <div class="row">
-            <div class="span12">
-
-                <div class="page-header">
-                    <h1>Galeria</h1>
-                </div>
-
+            <div class="span2 quadro-imagem">
+                <img width="160" height="160" src="{{ autor.thumb.url }}"
+                     alt="{{ autor.nome }}" title="{{ autor.nome }}">
+                {% if autor.desc %}<div class="desc-autor">{{ autor.desc|linebreaks }}</div>{% endif %}
+            </div>
+            {% if autor.galeria_set.count %}
+            <div class="span10">
                 <ul class="thumbnails">
-                    {% for quadro in quadros %}
+                    {% for quadro in autor.galeria_set.all %}
                         <li class="span2 quadro-imagem">
                             <a href="{{ quadro.imagem.url }}" class="thumb" title="{{ quadro.nome }}">
                                 <img width="160" height="160" src="{{ quadro.thumb.url }}"
                                      alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
                             </a>
                         </li>
-                        <li class="span4 quadro-texto">
+                        <li class="span8 quadro-texto">
                             <h4>{{ quadro.nome }}</h4>
                             {% if quadro.desc %}{{ quadro.desc|linebreaks }}{% endif %}
                         </li>
@@ -36,8 +40,8 @@
                         <li>Não há quadros cadastrados</li>
                     {% endfor %}
                 </ul>
-
             </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
@@ -53,7 +57,6 @@
     <script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
     <!-- Add Media helper (this is optional) -->
     <script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-media.js"></script>
-
     <!-- Perfect Scroll Bar -->
     <script type="text/javascript" src="{{ STATIC_URL }}js/perfect-scrollbar-0.4.1.min.js"></script>
 <script>
