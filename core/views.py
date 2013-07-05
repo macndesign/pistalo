@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from .models import Galeria, Autor
+from .models import Galeria, Autor, Sugestao
 
 
 class AutorListView(ListView):
@@ -20,3 +20,9 @@ class GaleriaListView(ListView):
     queryset = Galeria.objects.ativos()
     context_object_name = 'quadros'
     template_name = 'galeria.html'
+
+
+class SugestaoListView(ListView):
+    queryset = Sugestao.objects.ativos()
+    context_object_name = 'sugestoes'
+    template_name = 'sugestoes.html'

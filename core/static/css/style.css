@@ -4,6 +4,10 @@ html, body {
     height: 100%;
 }
 
+blockquote {
+    border-left: 5px solid rgba(242, 189, 144, 0.78);
+}
+
 header {
     padding: 3em 0 0;
     background-color: #c92a46;
@@ -12,10 +16,6 @@ header {
 
 a, a:hover {
     color: #c92a46;
-}
-
-header img {
-    text-align: center;
 }
 
 header .container {

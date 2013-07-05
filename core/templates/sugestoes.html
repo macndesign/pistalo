@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Sugestões{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+
+                <div class="page-header">
+                    <h1>Sugestões</h1>
+                </div>
+
+                <ul>
+                    {% for sugestao in sugestoes %}
+                        <li style="height: auto">
+                            <h4>
+                                {% if sugestao.link %}<a href="{{ sugestao.link }}" target="_blank">{% endif %}
+                                    {{ sugestao.titulo }}
+                                {% if sugestao.link %}</a>{% endif %}
+                            </h4>
+                            {% if sugestao.desc %}<blockquote>{{ sugestao.desc|linebreaks }}</blockquote>{% endif %}
+                        </li>
+                    {% empty %}
+                        <li>Não há sugestões cadastradas</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

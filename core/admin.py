@@ -1,6 +1,6 @@
 # coding: utf-8
 from django.contrib import admin
-from .models import Galeria, Autor
+from .models import Galeria, Autor, Sugestao
 
 
 class AutorAdmin(admin.ModelAdmin):
@@ -25,3 +25,15 @@ class GaleriaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Galeria, GaleriaAdmin)
+
+
+class SugestaoAdmin(admin.ModelAdmin):
+    list_editable = ['ordenacao']
+    list_display_links = ['titulo']
+    list_display = ['ordenacao', 'titulo', 'ativo']
+
+    class Meta:
+        ordering = ['ordenacao', 'titulo']
+
+
+admin.site.register(Sugestao, SugestaoAdmin)
