@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/jquery.fancybox.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-buttons.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-thumbs.css" />
+    <!-- Perfect Scroll Bar -->
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/perfect-scrollbar-0.4.1.min.css" />
 {% endblock %}
 
 {% block title %}Galeria{% endblock %}
@@ -41,17 +43,19 @@
 {% endblock %}
 
 {% block scripts %}
-<!-- fancybox -->
-<script src="{{ STATIC_URL }}fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-<!-- Add fancyBox main JS and CSS files -->
-<script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/jquery.fancybox.js"></script>
-<!-- Add Button helper (this is optional) -->
-<script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-buttons.js"></script>
-<!-- Add Thumbnail helper (this is optional) -->
-<script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
-<!-- Add Media helper (this is optional) -->
-<script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-media.js"></script>
+    <!-- fancybox -->
+    <script src="{{ STATIC_URL }}fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <!-- Add fancyBox main JS and CSS files -->
+    <script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/jquery.fancybox.js"></script>
+    <!-- Add Button helper (this is optional) -->
+    <script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-buttons.js"></script>
+    <!-- Add Thumbnail helper (this is optional) -->
+    <script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+    <!-- Add Media helper (this is optional) -->
+    <script type="text/javascript" src="{{ STATIC_URL }}fancybox/source/helpers/jquery.fancybox-media.js"></script>
 
+    <!-- Perfect Scroll Bar -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/perfect-scrollbar-0.4.1.min.js"></script>
 <script>
     // Set custom style, close if clicked, change title type and overlay color
     $(".thumb").fancybox({
@@ -70,6 +74,10 @@
                 }
             }
         }
+    });
+    $('.quadro-texto').perfectScrollbar({
+        wheelSpeed: 20,
+        wheelPropagation: false
     });
 </script>
 {% endblock %}

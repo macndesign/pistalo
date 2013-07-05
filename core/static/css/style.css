@@ -1,6 +1,6 @@
 html, body {
     font-family: 'Vollkorn', serif;
-    background: #efefef url("../img/bg01.jpg") bottom right;
+    background: #F7ECD0 url("../img/bg01.jpg") bottom right fixed;
     height: 100%;
 }
 
@@ -35,15 +35,16 @@ li.quadro-imagem img {
 
 li.quadro-texto {
     height: 160px;
-    overflow-y: auto;
+    overflow-y: hidden;
     background: rgba(255, 255, 255, .8);
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+    position: relative;
 }
 
 li.quadro-texto h4, li.quadro-texto p {
-    padding-left: 1em;
+    padding: 0 1em;
 }
 
 .page-header {
