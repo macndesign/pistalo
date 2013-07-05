@@ -58,6 +58,9 @@ class Galeria(models.Model):
         editable=True
     )
 
+    def codigo(self):
+        return 'P{0:03d}'.format(self.pk)
+
     objects = AtivoManager()
 
     class Meta:
