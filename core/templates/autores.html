@@ -19,10 +19,17 @@
                 <ul class="thumbnails">
                     {% for autor in autores %}
                         <li class="span2 quadro-imagem">
-                            <a href="{% url 'core:autor' autor.pk %}">
-                                <img width="160" height="160" src="{{ autor.thumb.url }}"
-                                     alt="{{ autor.nome }}" title="{{ autor.nome }}">
-                            </a>
+                            {% if autor.imagem %}
+                                <a href="{% url 'core:autor' autor.pk %}">
+                                    <img width="160" height="160" src="{{ autor.thumb.url }}"
+                                         alt="{{ autor.nome }}" title="{{ autor.nome }}">
+                                </a>
+                            {% else %}
+                                <a href="{% url 'core:autor' autor.pk %}">
+                                    <img width="160" height="160" src="{{ STATIC_URL }}img/autor-sem-foto.jpg"
+                                         alt="{{ autor.nome }}" title="{{ autor.nome }}">
+                                </a>
+                            {% endif %}
                         </li>
                         <li class="span10 quadro-texto">
                             <h4><a href="{% url 'core:autor' autor.pk %}">{{ autor.nome }}</a></h4>

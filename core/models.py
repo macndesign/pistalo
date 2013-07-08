@@ -9,7 +9,7 @@ class Autor(models.Model):
     ordenacao = models.PositiveSmallIntegerField(u'Ordenação', default=0)
     nome = models.CharField(max_length=120)
     desc = models.TextField(u'Descrição', blank=True)
-    imagem = models.ImageField(upload_to='galeria')
+    imagem = models.ImageField(upload_to='galeria', null=True, blank=True)
     thumb = ImageSpecField(source='imagem', processors=[ResizeToFill(160, 160)], format='JPEG', options={'quality': 60})
     ativo = models.BooleanField(default=False)
 
