@@ -29,14 +29,20 @@
 <header>
     <div class="container">
         <div class="row">
-            <img src="{{ STATIC_URL }}img/pistalo.png">
-            <div class="top-menu pull-right">
-                <a href="{% url 'core:home' %}">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="{% url 'core:autores' %}">Autores</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="{% url 'core:sugestoes' %}">Sugestões</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="{% url 'core:comprar' %}">Comprar</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="{% url 'core:vender' %}">Vender</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="{% url 'core:contato' %}">Contato</a>
+            <div class="span2">
+                <a href="{% url 'core:home' %}">
+                    <img src="{{ STATIC_URL }}img/logo-pistalo.png">
+                </a>
+            </div>
+            <div class="span10">
+                <div class="top-menu pull-right">
+                    <a href="{% url 'core:home' %}">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="{% url 'core:autores' %}">Autores</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="{% url 'core:sugestoes' %}">Sugestões</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="{% url 'core:comprar' %}">Comprar</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="{% url 'core:vender' %}">Vender</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="{% url 'core:contato' %}">Contato</a>
+                </div>
             </div>
         </div>
     </div>

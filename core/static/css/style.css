@@ -9,7 +9,7 @@ blockquote {
 }
 
 header {
-    padding: 3em 0 0;
+    padding: 3em 0 1em;
     background-color: rgba(201, 42, 70, .4);
 }
 
@@ -91,5 +91,10 @@ li.quadro-texto h4, li.quadro-texto p {
         padding-right: 20px;
         margin-left: -20px;
         margin-right: -20px;
+    }
+    .top-menu {
+        position: relative;
+        margin-top: 1.2em;
+        color: #c92a46;
     }
 }
