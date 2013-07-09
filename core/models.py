@@ -3,6 +3,7 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
 from .managers import AtivoManager
+import versioning
 
 
 class Autor(models.Model):
@@ -34,8 +35,15 @@ class Autor(models.Model):
     def get_absolute_url(self):
         return 'core:autor', (), {'pk': self.pk}
 
+    def delete(self, using=None):
+        self.ativo = False
+        self.save()
+
     def __unicode__(self):
         return self.nome
+
+
+versioning.register(Autor, ['ordenacao', 'nome', 'desc', 'imagem', 'ativo'])
 
 
 class Galeria(models.Model):
@@ -66,8 +74,15 @@ class Galeria(models.Model):
     class Meta:
         ordering = ['ordenacao', 'nome']
 
+    def delete(self, using=None):
+        self.ativo = False
+        self.save()
+
     def __unicode__(self):
         return self.nome
+
+
+versioning.register(Galeria, ['ordenacao', 'nome', 'desc', 'imagem', 'autor', 'ativo'])
 
 
 class Sugestao(models.Model):
@@ -95,5 +110,12 @@ class Sugestao(models.Model):
         verbose_name = u'Sugestão'
         verbose_name_plural = u'Sugestões'
 
+    def delete(self, using=None):
+        self.ativo = False
+        self.save()
+
     def __unicode__(self):
         return self.titulo
+
+
+versioning.register(Sugestao, ['ordenacao', 'titulo', 'desc', 'link', 'ativo'])
