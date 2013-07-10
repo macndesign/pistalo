@@ -17,27 +17,34 @@
             <div class="span12">
 
                 <div class="page-header">
-                    <h1>Galeria</h1>
+                    <div class="row">
+                        <div class="span9"><h1>Galeria</h1></div>
+                        <div class="span3 data-filter"></div>
+                    </div>
                 </div>
 
                 <ul class="thumbnails">
                     {% for quadro in quadros %}
-                        <li class="span2 quadro-imagem">
-                            <a href="{{ quadro.imagem.url }}" class="thumb" title="{{ quadro.nome }}">
-                                <img width="160" height="160" src="{{ quadro.thumb.url }}"
-                                     alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
-                            </a>
-                        </li>
-                        <li class="span4 quadro-texto">
-                            <h4>
-                                <small style="color: #c92a46">#<strong>{{ quadro.codigo }}</strong></small>
-                                {{ quadro.nome }}
-                                {% if quadro.autor %}
-                                    <small>por <a href="{{ quadro.autor.get_absolute_url }}">{{ quadro.autor.nome }}</a></small>
-                                {% endif %}
-                            </h4>
-                            {% if quadro.desc %}{{ quadro.desc|linebreaks }}{% endif %}
-                        </li>
+                    <li data-filter="{{ quadro.codigo }}" class="span6">
+                        <div class="row">
+                            <div class="span2 quadro-imagem">
+                                <a href="{{ quadro.imagem.url }}" class="thumb" title="{{ quadro.nome }}">
+                                    <img width="160" height="160" src="{{ quadro.thumb.url }}"
+                                         alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
+                                </a>
+                            </div>
+                            <div class="span4 quadro-texto">
+                                <h4>
+                                    <small style="color: #c92a46">#<strong>{{ quadro.codigo }}</strong></small>
+                                    {{ quadro.nome }}
+                                    {% if quadro.autor %}
+                                        <small>por <a href="{{ quadro.autor.get_absolute_url }}">{{ quadro.autor.nome }}</a></small>
+                                    {% endif %}
+                                </h4>
+                                {% if quadro.desc %}{{ quadro.desc|linebreaks }}{% endif %}
+                            </div>
+                        </div>
+                    </li>
                     {% empty %}
                         <li>Não há quadros cadastrados</li>
                     {% endfor %}
@@ -62,28 +69,30 @@
 
     <!-- Perfect Scroll Bar -->
     <script type="text/javascript" src="{{ STATIC_URL }}js/perfect-scrollbar-0.4.1.min.js"></script>
-<script>
-    // Set custom style, close if clicked, change title type and overlay color
-    $(".thumb").fancybox({
-        wrapCSS    : 'fancybox-custom',
-        closeClick : true,
+    <script>
+        // Set custom style, close if clicked, change title type and overlay color
+        $(".thumb").fancybox({
+            wrapCSS    : 'fancybox-custom',
+            closeClick : true,
 
-        openEffect : 'none',
+            openEffect : 'none',
 
-        helpers : {
-            title : {
-                type : 'inside'
-            },
-            overlay : {
-                css : {
-                    'background' : 'rgba(238,238,238,0.85)'
+            helpers : {
+                title : {
+                    type : 'inside'
+                },
+                overlay : {
+                    css : {
+                        'background' : 'rgba(238,238,238,0.85)'
+                    }
                 }
             }
-        }
-    });
-    $('.quadro-texto').perfectScrollbar({
-        wheelSpeed: 20,
-        wheelPropagation: false
-    });
-</script>
+        });
+        $('.quadro-texto').perfectScrollbar({
+            wheelSpeed: 20,
+            wheelPropagation: false
+        });
+    </script>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/data-filter.js"></script>
 {% endblock %}

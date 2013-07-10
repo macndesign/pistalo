@@ -13,6 +13,20 @@ header {
     background-color: rgba(201, 42, 70, .4);
 }
 
+.page-header {
+    border-bottom: 1px dashed #db305a;
+}
+
+form.filterform {
+    margin-bottom: 0;
+}
+
+/* Posiciona o campo de pesquisa por código */
+.data-filter {
+    padding-top: 20px;
+    text-align: right;
+}
+
 a, a:hover {
     color: #c92a46;
 }
@@ -46,7 +60,7 @@ footer a, footer a:hover {
     color: #000;
 }
 
-li.quadro-imagem {
+.quadro-imagem {
     height: 160px;
 }
 
@@ -60,7 +74,7 @@ li.quadro-imagem {
     margin-top: 1em;
 }
 
-li.quadro-texto {
+.quadro-texto {
     height: 160px;
     overflow-y: hidden;
     background: rgba(255, 255, 255, .5);
@@ -70,20 +84,14 @@ li.quadro-texto {
     position: relative;
 }
 
-li.quadro-texto h4, li.quadro-texto p {
+.quadro-texto h4, .quadro-texto p {
     padding: 0 1em;
-}
-
-.page-header {
-    border-bottom: 1px dashed #db305a;
 }
 
 /* fancybox */
 .fancybox-custom .fancybox-skin {
     box-shadow: 0 0 50px #222;
 }
-
-/**/
 
 @media (max-width: 767px) {
     header, footer, .main {
@@ -96,5 +104,9 @@ li.quadro-texto h4, li.quadro-texto p {
         position: relative;
         margin-top: 1.2em;
         color: #c92a46;
+    }
+    .data-filter {
+        padding-top: 1em;
+        text-align: left;
     }
 }
