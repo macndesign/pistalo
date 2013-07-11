@@ -30,10 +30,16 @@ class GaleriaListView(ListView):
             if cod_quadro[0] == 'p' or cod_quadro[0] == 'P' or cod_quadro.isdigit():
                 if cod_quadro.isdigit():
                     cod_quadro = int(cod_quadro)
-                elif cod_quadro.startswith("P"):
-                    cod_quadro = int(cod_quadro.replace("P", ""))
-                elif cod_quadro.startswith("p"):
-                    cod_quadro = int(cod_quadro.replace("p", ""))
+                elif cod_quadro.startswith('P'):
+                    if cod_quadro == 'P':
+                        cod_quadro = 0
+                    else:
+                        cod_quadro = int(cod_quadro.replace('P', ''))
+                elif cod_quadro.startswith('p'):
+                    if cod_quadro == 'p':
+                        cod_quadro = 0
+                    else:
+                        cod_quadro = int(cod_quadro.replace('p', ''))
                 else:
                     cod_quadro = 0
             else:
