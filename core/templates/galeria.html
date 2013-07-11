@@ -19,7 +19,12 @@
                 <div class="page-header">
                     <div class="row">
                         <div class="span9"><h1>Galeria</h1></div>
-                        <div class="span3 data-filter"></div>
+                        <div class="span3 data-filter">
+                            <form class="filterform bs-docs-example form-search" action="." method="get">
+                                <input class="input-medium search-query" type="text" placeholder="Pesquisa por código" name="quadro">
+                                <button class="btn" type="submit">Ok</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -94,5 +99,5 @@
         });
     </script>
 
-    <script type="text/javascript" src="{{ STATIC_URL }}js/data-filter.js"></script>
+    {% comment %}<script type="text/javascript" src="{{ STATIC_URL }}js/data-filter.js"></script>{% endcomment %}
 {% endblock %}

@@ -22,6 +22,33 @@ class GaleriaListView(ListView):
     context_object_name = 'quadros'
     template_name = 'galeria.html'
 
+    def get_queryset(self):
+        cod_quadro = self.request.GET.get('quadro', None)
+
+        if cod_quadro:
+
+            if cod_quadro[0] == 'p' or cod_quadro[0] == 'P' or cod_quadro.isdigit():
+                if cod_quadro.isdigit():
+                    cod_quadro = int(cod_quadro)
+                elif cod_quadro.startswith("P"):
+                    cod_quadro = int(cod_quadro.replace("P", ""))
+                elif cod_quadro.startswith("p"):
+                    cod_quadro = int(cod_quadro.replace("p", ""))
+                else:
+                    cod_quadro = 0
+            else:
+                cod_quadro = 0
+
+            quadros = Galeria.objects.ativos().filter(pk=int(cod_quadro))
+
+            if quadros:
+                return quadros
+            else:
+                return []
+
+        else:
+            return self.queryset
+
 
 class SugestaoListView(ListView):
     queryset = Sugestao.objects.ativos()
