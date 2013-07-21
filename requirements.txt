@@ -3,6 +3,7 @@ Pillow==2.0.0
 South==0.8.1
 Unipath==1.0
 boto==2.9.7
+distribute==0.7.3
 dj-database-url==0.2.1
 django-appconf==0.6
 django-imagekit==3.0.1
