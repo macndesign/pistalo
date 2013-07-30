@@ -10,7 +10,7 @@ blockquote {
 
 header {
     padding: 3em 0 1em;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(201, 42, 70, .5);
 }
 
 .page-header {
@@ -39,7 +39,7 @@ header .container {
     position: absolute;
     bottom: 0;
     right: 0;
-    color: #777;
+    color: #c92a46;
 }
 
 .top-menu a {
