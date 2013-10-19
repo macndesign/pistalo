@@ -17,7 +17,7 @@
             <h1><i>{{ autor.nome }}</i></h1>
         </div>
         <div class="row">
-            <div class="span2 quadro-imagem">
+            <div class="span5 quadro-imagem-sem-altura">
                 {% if autor.imagem %}
                     <img width="160" height="160" src="{{ autor.thumb.url }}"
                         alt="{{ autor.nome }}" title="{{ autor.nome }}">
@@ -28,7 +28,7 @@
                 {% if autor.desc %}<div class="desc-autor">{{ autor.desc|linebreaks }}</div>{% endif %}
             </div>
             {% if autor.galeria_set.count %}
-            <div class="span10">
+            <div class="span7">
                 <ul class="thumbnails">
                     {% for quadro in autor.galeria_set.all %}
                         <li class="span2 quadro-imagem">
@@ -37,7 +37,7 @@
                                      alt="{{ quadro.nome }}" title="{{ quadro.nome }}">
                             </a>
                         </li>
-                        <li class="span8 quadro-texto">
+                        <li class="span5 quadro-texto">
                             <h4>{{ quadro.nome }}</h4>
                             {% if quadro.desc %}{{ quadro.desc|linebreaks }}{% endif %}
                         </li>

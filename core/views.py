@@ -5,6 +5,12 @@ from django.views.generic.detail import DetailView
 from .models import Galeria, Autor, Sugestao
 
 
+class HomeListView(ListView):
+    queryset = Galeria.objects.ativos()
+    context_object_name = 'quadros'
+    template_name = 'home.html'
+
+
 class AutorListView(ListView):
     queryset = Autor.objects.ativos()
     context_object_name = 'autores'

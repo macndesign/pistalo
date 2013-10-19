@@ -9,8 +9,8 @@ blockquote {
 }
 
 header {
-    padding: 3em 0 1em;
-    background-color: rgba(201, 42, 70, .5);
+    padding: 1em 0 1em;
+    background-color: rgba(255, 106, 106, .7);
 }
 
 .page-header {
@@ -64,13 +64,13 @@ footer a, footer a:hover {
     height: 160px;
 }
 
-.quadro-imagem img {
+.quadro-imagem img, .quadro-imagem-sem-altura img {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
 }
 
-.quadro-imagem .desc-autor {
+.quadro-imagem-sem-altura .desc-autor {
     margin-top: 1em;
 }
 

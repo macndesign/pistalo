@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Comprar{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+
+                <div class="page-header">
+                    <h1>Quadros diversos</h1>
+                </div>
+
+                <div class="row">
+
+                    <div class="span12">
+                        <ul class="bxslider">
+                            {% for quadro in quadros %}
+                            <li><img src="{{ quadro.imagem.url }}" /></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_head %}
+    <link href="{{ STATIC_URL }}bxslider/jquery.bxslider.css" rel="stylesheet">
+    <style>
+    .bx-wrapper .bx-viewport {
+        background-color: rgba(255, 255, 255, .5);
+        border: none;
+        text-align: center;
+
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    ul.bxslider li img {
+        height: 400px;
+
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+    }
+    ul.bxslider { margin: 0 }
+    </style>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ STATIC_URL }}bxslider/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $('.bxslider').bxSlider({
+            auto: true,
+            autoControls: false,
+            adaptiveHeight: true,
+            mode: 'fade'
+        });
+    </script>
+{% endblock %}
