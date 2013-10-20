@@ -6,11 +6,6 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-
-                <div class="page-header">
-                    <h1>Quadros diversos</h1>
-                </div>
-
                 <div class="row">
 
                     <div class="span12">
@@ -30,6 +25,10 @@
 {% block extra_head %}
     <link href="{{ STATIC_URL }}bxslider/jquery.bxslider.css" rel="stylesheet">
     <style>
+    .bx-wrapper {
+        margin-top: 20px;
+        width: 50%;
+    }
     .bx-wrapper .bx-viewport {
         background-color: rgba(255, 255, 255, .5);
         border: none;
@@ -40,13 +39,19 @@
         border-radius: 6px;
     }
     ul.bxslider li img {
-        height: 400px;
+        width: 100%;
 
         -webkit-border-radius: 6px;
         -moz-border-radius: 6px;
         border-radius: 6px;
     }
     ul.bxslider { margin: 0 }
+    @media (max-width: 767px) {
+        .bx-wrapper {
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
     </style>
 {% endblock %}
 {% block scripts %}
@@ -54,9 +59,10 @@
     <script type="text/javascript">
         $('.bxslider').bxSlider({
             auto: true,
-            autoControls: false,
+            autoControls: true,
             adaptiveHeight: true,
-            mode: 'fade'
+            mode: 'fade',
+            speed: 500
         });
     </script>
 {% endblock %}
