@@ -1,6 +1,6 @@
 html, body {
     font-family: 'Vollkorn', serif;
-    background: #F7ECD0 url("../img/bg01.jpg") bottom right fixed;
+    background: #FFF url("../img/bg01-blue.jpg") bottom right fixed;
     height: 100%;
 }
 
@@ -10,11 +10,13 @@ blockquote {
 
 header {
     padding: 1em 0 1em;
-    background-color: rgba(255, 106, 106, .7);
+    background-color: rgba(0, 38, 70, 0.6);
+    /*background-color: rgba(255, 106, 106, .7);*/
 }
 
 .page-header {
-    border-bottom: 1px dashed #db305a;
+    border-bottom: 1px dashed #0077b3;
+    /*border-bottom: 1px dashed #db305a;*/
 }
 
 form.filterform {
@@ -28,7 +30,8 @@ form.filterform {
 }
 
 a, a:hover {
-    color: #c92a46;
+    color: #0077b3;
+    /*color: #c92a46;*/
 }
 
 header .container {
@@ -39,13 +42,21 @@ header .container {
     position: absolute;
     bottom: 0;
     right: 0;
-    color: #c92a46;
+    color: rgba(255, 255, 255, .2);
+    /*color: #c92a46;*/
 }
 
 .top-menu a {
     color: #fff;
     font-size: 1.2em;
     font-style: italic;
+}
+
+.logo-pistalo {
+    width: 100px;
+    float: left;
+    min-height: 1px;
+    margin-left: 30px;
 }
 
 .main {
@@ -94,6 +105,12 @@ footer a, footer a:hover {
 }
 
 @media (max-width: 767px) {
+    .logo-pistalo {
+        width: 70px;
+        float: left;
+        min-height: 1px;
+        margin-left: 0;
+    }
     header, footer, .main {
         padding-left: 20px;
         padding-right: 20px;
@@ -103,7 +120,6 @@ footer a, footer a:hover {
     .top-menu {
         position: relative;
         margin-top: 1.2em;
-        color: #c92a46;
     }
     .data-filter {
         padding-top: 1em;
