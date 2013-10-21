@@ -3,12 +3,17 @@ from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from .models import Galeria, Autor, Sugestao
+from random import shuffle
 
 
 class HomeListView(ListView):
-    queryset = Galeria.objects.ativos()
     context_object_name = 'quadros'
     template_name = 'home.html'
+
+    def get_queryset(self):
+        mix = list(Galeria.objects.ativos())
+        shuffle(mix)
+        return mix[:5]
 
 
 class AutorListView(ListView):
