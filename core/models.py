@@ -3,7 +3,6 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
 from .managers import AtivoManager
-import versioning
 
 
 class Autor(models.Model):
@@ -43,9 +42,6 @@ class Autor(models.Model):
         return self.nome
 
 
-versioning.register(Autor, ['ordenacao', 'nome', 'desc', 'imagem', 'ativo'])
-
-
 class Galeria(models.Model):
     ordenacao = models.PositiveSmallIntegerField(u'Ordenação', default=0)
     nome = models.CharField(max_length=120)
@@ -82,9 +78,6 @@ class Galeria(models.Model):
         return self.nome
 
 
-versioning.register(Galeria, ['ordenacao', 'nome', 'desc', 'imagem', 'autor', 'ativo'])
-
-
 class Sugestao(models.Model):
     ordenacao = models.PositiveSmallIntegerField(u'Ordenação', default=0)
     titulo = models.CharField(u'Título', max_length=120)
@@ -116,6 +109,3 @@ class Sugestao(models.Model):
 
     def __unicode__(self):
         return self.titulo
-
-
-versioning.register(Sugestao, ['ordenacao', 'titulo', 'desc', 'link', 'ativo'])

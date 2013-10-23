@@ -125,7 +125,6 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'core',
     'imagekit',
-    'versioning',
     'south',
 )
 
