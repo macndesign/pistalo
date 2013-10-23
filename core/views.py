@@ -29,7 +29,6 @@ class AutorDetailView(DetailView):
 
 
 class GaleriaListView(ListView):
-    queryset = Galeria.objects.ativos()
     context_object_name = 'quadros'
     template_name = 'galeria.html'
 
@@ -64,7 +63,7 @@ class GaleriaListView(ListView):
                 return []
 
         else:
-            return self.queryset
+            return Galeria.objects.ativos()
 
 
 class SugestaoListView(ListView):
