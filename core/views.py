@@ -16,6 +16,16 @@ class HomeListView(ListView):
         return mix[:5]
 
 
+class GalleryRoomListView(ListView):
+    context_object_name = 'quadros'
+    template_name = 'gallery/index.html'
+
+    def get_queryset(self):
+        mix = list(Galeria.objects.ativos())
+        shuffle(mix)
+        return mix[:10]
+
+
 class AutorListView(ListView):
     queryset = Autor.objects.ativos()
     context_object_name = 'autores'

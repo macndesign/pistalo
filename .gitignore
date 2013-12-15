@@ -9,3 +9,4 @@ dev.db
 local_settings.py
 .env
 media/
+.python-version

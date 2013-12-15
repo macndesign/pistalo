@@ -39,12 +39,10 @@
             </div>
             <div class="span10">
                 <div class="top-menu pull-right">
-                    <a href="{% url 'core:home' %}">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="{% url 'core:galeria' %}">Galeria</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="{% url 'core:galeria' %}">Comprar</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="{% url 'core:autores' %}">Autores</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="{% url 'core:sugestoes' %}">Sugestões</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="{% url 'core:comprar' %}">Comprar</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="{% url 'core:vender' %}">Vender</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="{% url 'core:vender' %}">Publicar</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="{% url 'core:contato' %}">Contato</a>
                 </div>
             </div>
@@ -56,7 +54,7 @@
 </div>
 <footer>
     <div class="container">
-        <span>&copy; 2013 <a href="{% url 'admin:index' %}">Pistalo</a></span>
+        <span>&copy; 2013 <a href="{% url 'admin:index' %}">Pistalo</a> | <a href="{% url 'core:gallery' %}">Gallery</a> </span>
     </div>
 </footer>
 

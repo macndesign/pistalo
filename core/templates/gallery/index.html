@@ -1,0 +1,56 @@
+{% extends "gallery/base.html" %}
+{% block title %}Pistalo - Gallery Room{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}gallery/css/component.css" />
+    <script src="{{ STATIC_URL }}gallery/js/modernizr.custom.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <!-- Codrops top bar -->
+        <div class="codrops-top clearfix">
+            <a href="{% url 'core:home' %}"><strong>Home</strong></a>
+            <span class="right">
+                <a href="{% url 'core:galeria' %}">Comprar</a>
+                <a href="{% url 'core:autores' %}">Autores</a>
+                <a href="{% url 'core:sugestoes' %}">Sugestões</a>
+                <a href="{% url 'core:vender' %}">Publicar</a>
+                <a href="{% url 'core:contato' %}">Contato</a>
+            </span>
+        </div><!--/ Codrops top bar -->
+
+        <h1>&copy; 2013 <a href="{% url 'admin:index' %}">Pistalo</a></h1>
+
+        <div id="gr-gallery" class="gr-gallery">
+            <div class="gr-main">
+
+                {% for quadro in quadros %}
+                    <figure>
+                        <div>
+                            <img src="{{ quadro.imagem.url }}" alt="{{ quadro.nome }}" />
+                        </div>
+                        <figcaption>
+                            <h2>
+                                <a class="btn btn-mini btn-success"
+                                   href="mailto:pistalo@hotmail.com?subject=Comprar&body=Nome:%20%0D%0ATelefone:%20%0D%0AQuadro:%20{{ quadro.nome }}%0D%0ACódigo:%20{{ quadro.codigo }}%0D%0AMensagem:%20%0D%0A">
+                                    Comprar
+                                </a>
+                                <strong style="float: right; margin: 3px 3px">#{{ quadro.codigo }}</strong>
+                            </h2>
+                            <div>
+                                {{ quadro.nome }} por
+                                {% if quadro.autor %}
+                                    <a href="{{ quadro.autor.get_absolute_url }}">{{ quadro.autor.nome }}</a>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if quadro.desc %}{{ quadro.desc|linebreaks }}{% endif %}
+                            </div>
+                        </figcaption>
+                    </figure>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div><!-- /container -->
+{% endblock %}
