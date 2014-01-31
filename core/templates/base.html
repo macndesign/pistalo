@@ -55,6 +55,7 @@
 <footer>
     <div class="container">
         <span>&copy; 2013 <a href="{% url 'admin:index' %}">Pistalo</a></span>
+        <span class="pull-right"><a id="page-top" href="#topo">Topo <i class="icon-arrow-up"></i></a></span>
     </div>
 </footer>
 
@@ -64,5 +65,10 @@
 <script src="{{ STATIC_URL }}js/jquery.js"></script>
 <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 {% block scripts %}{% endblock %}
+<script>
+    $('#page-top').click(function () {
+        $('body').animate({scrollTop: 0}, 'fast');
+    });
+</script>
 </body>
 </html>
