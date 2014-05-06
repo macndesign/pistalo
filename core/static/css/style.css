@@ -104,6 +104,12 @@ footer a, footer a:hover {
     box-shadow: 0 0 50px #222;
 }
 
+/* format the slider */
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+	bottom: -55px !important;
+}
+
 @media (max-width: 767px) {
     .logo-pistalo {
         width: 70px;

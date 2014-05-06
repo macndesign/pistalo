@@ -11,9 +11,10 @@ class HomeListView(ListView):
     template_name = 'home.html'
 
     def get_queryset(self):
-        mix = list(Galeria.objects.ativos())
+        qs = Galeria.objects.ativos()
+        mix = list(qs)
         shuffle(mix)
-        return mix[:5]
+        return mix
 
 
 class GalleryRoomListView(ListView):
@@ -21,7 +22,8 @@ class GalleryRoomListView(ListView):
     template_name = 'gallery/index.html'
 
     def get_queryset(self):
-        mix = list(Galeria.objects.ativos())
+        qs = Galeria.objects.ativos()
+        mix = list(qs)
         shuffle(mix)
         return mix[:10]
 
